@@ -9,10 +9,14 @@
         {% endif %}
 
         {% if contact.city %}
-            <li class="p-locallity locality">{{ contact.city }}</li>
+            <li class="p-locallity locality">{{ contact.city }}
+                {% if contact.post_code %}
+                    {{ contact.post_code }}
+                {% endif %}
+            </li>
         {% endif %}
         {% if contact.state %}
-            <li class="p-region region">{{ contact.city }}</li>
+            <li class="p-region region">{{ contact.state }}</li>
         {% endif %}
 
         {% if contact.country %}

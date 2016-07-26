@@ -8,6 +8,7 @@
 ansible/.vagrant/
 /Vagrantfile.local
 /docs/_build/
+pages/static/libs
 node_modules
 ansible/nostalgio_keystore/*
 ansible/files/*
