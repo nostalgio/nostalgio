@@ -1,0 +1,36 @@
+----
+- name: apply common configruation to all nodes
+  hosts: all 
+  remote_user: {{ deploy_user }} 
+  become: yes
+  become_user: root
+  roles:
+      - common
+
+- name: deploy postgreSQL and configure the database
+  hosts: all
+  remote_user: {{ deploy_user }} 
+  become: yes
+  become_user: root
+  roles:
+      - role: database 
+  tags:
+      - database
+        
+- name:  configure and provision nginx and letsencrypt ssl cert 
+  hosts: all 
+  remote_user: {{ deploy_user }} 
+  become: yes
+  become_user: root
+  roles:
+      - role: nginx 
+  tags:
+      - nginxle
+
+- name: provision application code django, redis and celery 
+  hosts: all 
+  remote_user:  {{ deploy_user }}
+  roles:
+      - role: web
+  tags:
+      - webapp 
