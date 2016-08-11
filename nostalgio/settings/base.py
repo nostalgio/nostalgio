@@ -137,9 +137,15 @@ WSGI_APPLICATION = 'nostalgio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+from .secret import DB_NAME, DB_USER, DB_PASSWORD
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///nostalgio'),
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+    }
 }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
@@ -183,6 +189,7 @@ MEDIA_URL = '/media/'
 # http://django-compressor.readthedocs.org/en/latest/settings/
 
 COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', 'django_libsass.SassCompiler'),
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
 
