@@ -38,21 +38,25 @@
     
     <div class="off-canvas-content" data-off-canvas-content>
             
-            <br>
             {% block content %}{% endblock %}
     
             <footer>
                 <div id="sitemap" class="pad hide-for-small-only">
                     <div class="row">
-                      <div class="medium-4 columns">
-                        <div class="headline">
-                          <h4><strong>Explore Our Site</strong></h4>
+                        <div class="medium-4 columns">
+                            <div class="headline">
+                                <h4><strong>What Our Customers Are Saying</strong></h4>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     <br>
                     <div class="row">
-                        {% site_menu parent=site_root calling_page=self %}
+                        <div class="small-12 columns">
+                            <blockquote>
+                                "We love Nostalg.io!"
+                                <cite>Customer</cite>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
                 <div id="contact-us">
