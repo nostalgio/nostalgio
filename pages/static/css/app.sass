@@ -1,6 +1,8 @@
 @charset 'utf-8'
 
 @import 'css/settings'
+
+// Foundation
 @import 'libs/foundation-sites/scss/foundation'
 
 @include foundation-global-styles
@@ -40,25 +42,21 @@
 @include foundation-top-bar
 @include foundation-menu-icon
 
-@import 'homepage'
-
-// Colors
-
-$primary: #3c0718
-$secondary: #07293c
-$tertiary: #AE7505
-$off-white: #F2F2F2
-$tundora: #444
-$mine-shaft: #333
-$dark-metal: #222
+// Static files
 $static: static
 
-// Fonts
-$header-font-family: 'Lato', Helvetica, sans
-$body-font-family: 'Lato', Helvetica, sans
-$paragraph-font-family: 'Lato', Helvetica, sans
+
 
 $header-font-color: $tundora !default
+
+// Fonts
+@import 'fonts'
+@import 'colors'
+@import 'utils'
+@import 'menu'
+@import 'homepage'
+
+
 
 // Responsive image/video classes
 .rich-text img
@@ -77,10 +75,18 @@ $header-font-color: $tundora !default
 
 // Change row max-width
 .row
-    max-width: 68em
+    max-width: 80rem
 .pad
     padding: 20px 0
 
+.callout
+    background-color: #EEE
+    @extend .shadow
+
+
+// Universal
+h5
+    @extend .p-font
 // Links and buttons
 a
     color: $primary
@@ -93,61 +99,6 @@ button, .button
     &:hover
         background: $primary
 
-// Title bar
-.title-bar 
-    background: $primary
-
-.top-bar
-    background: $primary
-    padding: 0
-    li
-        font-size: 13px
-    li.menu-text
-        font-size: 18px
-        color: $white
-
-    a
-        color: $white
-        &:hover
-            color: $white
-
-    .menu .active a 
-        background: $tertiary
-    ul, .dropdown.menu .submenu
-        background: $primary
-        border: 0px
-    .dropdown.menu .submenu
-        border-top: 3px solid $tertiary
-    .top-bar-right
-        margin-top: 1px
-    .menu li:not(.menu-text) a
-        padding: 13px 15px
-    li a:hover
-        background-color: $tertiary
-    .dropdown.menu .is-dropdown-submenu-parent a::after
-        margin-top: 5px
-        border-color: $white transparent transparent
-        border-style: solid
-    .is-drilldown-submenu-parent>a::after
-        border-color: transparent transparent transparent $white
-    .js-drilldown-back::before
-        border-color: transparent $white transparent transparent
-    .has-form
-        padding-left: 20px
-        input
-            max-width: 300px
-        input.field
-            margin-right: 0px
-            border-top-left-radius: 2px
-            border-bottom-left-radius: 2px
-            
-        input.button
-            padding-bottom: 11px
-            padding-top: 9px
-            border-top-right-radius: 2px
-            border-bottom-right-radius: 2px
-        [type="text"], [type="submit"]
-            height: 2.1rem
 
 // The grow thingy
 .grow
@@ -231,32 +182,6 @@ ul.share-buttons .fa
         margin-right: 8px
         font-size: 20px
 
-// Intro page
-.intro
-    padding: 50px 0 30px
-    background: url("/static/img/background.jpg") no-repeat center center fixed
-    -webkit-background-size: cover
-    -moz-background-size: cover
-    -o-background-size: cover
-    background-size: cover
-    height: 100vh
-
-#tagline
-    margin-top: 20vh
-    margin-left: auto
-    margin-right: auto
-    text-align: center
-
-.tagtext
-    display: inline-block
-    margin: 0.5rem
-    background-color: rgba(60, 7, 24, 0.8)
-    color: $tertiary
-    font-size: 2rem
-    padding: 0.5rem
-
-#carousel
-    margin-top: 30px
 
 
 // Section

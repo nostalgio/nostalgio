@@ -6,20 +6,47 @@
 
 {% block content %}
     <div class="intro">
-        <div id="tagline">
-            <div class="tagtext delay-1">
-                Timeless Design
+        <div class="row">
+            <div class="medium-6 large-4 columns">
+                <div id="tagline">
+                    <div>
+                        &nbsp;
+                    </div>
+                    <div class="tagtext delay-1">
+                        Timeless Design
+                    </div>
+                    <div class="tagtext delay-2">
+                        { + }
+                    </div>
+                    <div class="tagtext delay-3">
+                        Craftsmanship Code
+                    </div>                    
+                </div>
             </div>
-            <div class="tagtext delay-2">
-                +
-            </div>
-            <div class="tagtext delay-3">
-                Craftsmanship Code
-            </div>
+            <div class="medium-6 large-4 large-offset-4 columns">
+                <!-- Place rolodex of cool statements here. -->
+                <div id="quick-contact-form" class="delay-4">
+                    <form action="quick_contact" class="form compact-form" method="post" accept-charset="utf-8">
+                        <div>
+                            <span>I want to talk about </span>
+                            <select name="" class="inline-select">
+                                <option value="">software</option>
+                                <option value="">a website</option>
+                                <option value="">e-commerce</option>
+                                <option value="">consulting</option>
+                            </select>
+                            <span> for my company or startup, so please contact me: </span>
+                            <br>
+                            <input type="text" name="" value="" placeholder="first and last name">
+                            <input type="email" name="" value="" placeholder="email address">
 
-            <!-- Place rolodex of cool statements here. -->
-            
+                            <button type="submit" class="button expanded">SEND</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+        
         
     </div>
 

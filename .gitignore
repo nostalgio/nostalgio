@@ -1,6 +1,7 @@
 *.pyc
 .DS_Store
 *.swp
+secret.py
 /venv/
 /static/
 /media/

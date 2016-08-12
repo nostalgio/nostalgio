@@ -1,1 +1,88 @@
-// Works on Sass
+// Intro page
+.intro
+    padding: 0 0 30px
+    margin-top: -50px
+    background: url("/static/img/background.jpg") no-repeat center center fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: 100vh
+    div.row
+        height: 100%
+        position: relative
+
+#tagline
+    margin-top: 25vh
+    @media #{$small-only}
+        margin-top: 20px
+    text-align: center
+    div:nth-child(2)
+        margin-top: 40px
+
+.tagtext
+    @extend .header-font, .shadow2
+    margin: 0.5rem 0
+    padding: 0.5rem
+    background-color: rgba(60, 7, 24, 0.85)
+    color: $gold
+    font-size: 2.2rem
+    font-weight: bold
+
+.delay-1
+    @include fadein(.7s)
+.delay-2
+    @include fadein(1.4s)
+.delay-3
+    @include fadein(2.1s)
+.delay-4
+    @include fadein(2.8s)
+
+.inline-select
+
+
+#carousel
+    margin-top: 30px
+
+
+#quick-contact-form
+    @extend .shadow2
+    margin-top: 25vh
+    @media #{$small-only}
+        margin-top: 20px
+    background-color: rgba(60, 7, 24, 0.85)
+    color: $gold
+    padding: 0.5rem 1.5rem
+    font-size: 1.85rem
+    select
+        background-color: rgba(60, 7, 24, 0.1)
+        color: $white
+        font-size: 1.6rem
+        border: 1px solid $gold
+        height: auto
+        max-width: 180px
+        margin-bottom: 0
+        line-height: 1.4
+    input
+        margin-bottom: 0.5rem
+        background-color: rgba(60, 7, 24, 0.1)
+        color: $white
+        font-size: 1.6rem
+        border: 1px solid $gold
+    button
+        font-size: 1.4rem
+        padding: 0.5rem 1rem
+
+
+.compact-form
+    select
+        background-image: none
+        padding: 0 0.65rem 0.25rem
+    input, select, textarea
+        margin: 0
+    input[type="text"], input[type="number"]
+        box-shadow: none
+        padding: 0.25rem 0.65rem
+    textarea
+        box-shadow: none
+        padding: 0.25rem

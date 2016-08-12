@@ -1,0 +1,58 @@
+// Title bar
+#logo
+    position: absolute
+    top: 8px
+    left: 8px
+    height: 80px
+    z-index: 100
+
+.title-bar 
+    background: $primary
+
+
+.top-bar
+    background: $primary
+    @extend .shadow2
+    padding: 0
+    a
+        color: $gold
+        @extend .header-font
+        font-size: 1.8rem
+        &:hover
+            color: $gold
+    .menu
+        li:hover a strong, li.active a strong
+            border-bottom: 1px solid $gold
+        li.active a
+            color: $gold
+    ul, .dropdown.menu .submenu
+        background: $primary
+        border: 0px
+    .dropdown.menu .submenu
+        border-top: 3px solid $gold
+    .menu li:not(.menu-text) a
+        padding: 13px 15px
+    .dropdown.menu .is-dropdown-submenu-parent a::after
+        margin-top: 5px
+        border-color: $gold transparent transparent
+        border-style: solid
+    .is-drilldown-submenu-parent>a::after
+        border-color: transparent transparent transparent $gold
+    .js-drilldown-back::before
+        border-color: transparent $gold transparent transparent
+    .has-form
+        padding-left: 20px
+        input
+            max-width: 300px
+        input.field
+            margin-right: 0px
+            border-top-left-radius: 2px
+            border-bottom-left-radius: 2px
+            
+        input.button
+            padding-bottom: 11px
+            padding-top: 9px
+            border-top-right-radius: 2px
+            border-bottom-right-radius: 2px
+        [type="text"], [type="submit"]
+            height: 2.1rem
