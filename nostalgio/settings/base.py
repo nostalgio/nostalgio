@@ -231,3 +231,12 @@ BROKER_URL = 'redis://'
 
 CELERY_SEND_TASK_ERROR_EMAILS = True
 CELERYD_LOG_COLOR = False
+
+
+# Email settings
+from .secret import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'no-reply@nostalg.io'
+MANAGERS = ('joshua@nostalg.io',)

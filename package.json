@@ -1,10 +1,24 @@
 {
   "name": "nostalgio",
-  "version": "0.0.0",
-  "dependencies": {},
+  "version": "0.0.1",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-imagemin": "^1.0.0"
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "grunt": "^1.0.1",
+    "grunt-bg-shell": "^2.3.3",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-newer": "^1.2.0",
+    "grunt-rollup": "^0.7.1",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-includepaths": "^0.1.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0"
   },
   "engines": {
     "node": ">=0.10.0"

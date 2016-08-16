@@ -2,11 +2,17 @@
 .intro
     padding: 0
     background: url("/static/img/background.jpg") no-repeat center center fixed
+    @media #{$small-only}
+        background-position: left top
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
     height: 100vh
+    @media #{$small-only}
+        height: 100%
+        min-height: 100vh
+    margin-top: -42px
     div.row
         height: 100%
         position: relative
@@ -16,12 +22,15 @@
         max-width: 72em !important
 
 #tagline
-    margin-top: 25vh
-    @media #{$small-only}
-        margin-top: 20px
-    text-align: center
+    margin-top: 30vh
     div:nth-child(2)
         margin-top: 40px
+    @media #{$small-only}
+        margin-top: 15px
+        div:nth-child(2)
+            margin-top: 20px
+    text-align: center
+    
 
 .tagtext
     @extend .header-font, .shadow2
@@ -30,6 +39,8 @@
     background-color: rgba(60, 7, 24, 0.85)
     color: $gold
     font-size: 2rem
+    @media screen and (max-width: 380px)
+        font-size: 1.5rem
     font-weight: bold
 
 .delay-1
@@ -40,7 +51,8 @@
     @include fadein(2.1s)
 .delay-4
     @include fadein(2.8s)
-
+    @media #{$small-only}
+        @include fadein(2.1s)
 .inline-select
 
 
@@ -50,39 +62,56 @@
 
 #quick-contact-form
     @extend .shadow2
-    margin-top: 25vh
+    margin-top: 30vh
     @media #{$small-only}
-        margin-top: 12%
+        margin-top: 5px 
+        margin-bottom: 15px
     background-color: rgba(60, 7, 24, 0.85)
     color: $white
     padding: 0.5rem 1.5rem
     font-size: 1.8rem
     @media screen and (min-width: 64em) and (max-width: 72em)
         font-size: 1.6rem
+    @media screen and (max-width: 380px)
+        font-size: 1.3rem
     select
         background-color: rgba(60, 7, 24, 0.1)
         color: $white
         font-size: 1.5rem
+        line-height: 1.4
+        @media screen and (max-width: 380px)
+            font-size: 1.2rem
         border: 1px solid $gold
         height: auto
         max-width: 180px
         margin-bottom: 0
-        line-height: 1.4
     input
         margin-bottom: 0.5rem
         background-color: rgba(60, 7, 24, 0.1)
         color: $white
         font-size: 1.5rem
+        line-height: 1.3
         @media #{$small-only}
             font-size: 1.25rem
-        line-height: 1.3
+        @media screen and (max-width: 380px)
+            font-size: 1.2rem
+            line-height: 1
+            height: 2rem
         border: 1px solid $gold
         padding: 0rem 0.65rem
     ::-webkit-input-placeholder
         font-size: 1.4rem
+        @media #{$small-only}
+            font-size: 1.25rem
+        @media screen and (max-width: 380px)
+            font-size: 1.2rem
         padding-top: 0.25rem
     button
         font-size: 1.4rem
+        @media #{$small-only}
+            font-size: 1.25rem
+        @media screen and (max-width: 380px)
+            font-size: 1.2rem
         padding: 0.5rem 1rem
 
 

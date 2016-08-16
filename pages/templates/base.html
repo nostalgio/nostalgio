@@ -105,12 +105,15 @@
     </div>            
             
     {% compress js %}
+        <script src="{% static 'libs/polyfill.min.js' %}"></script>
         <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'libs/foundation-sites/dist/foundation.min.js' %}"></script>
         <script src="{% static 'libs/what-input/what-input.min.js' %}"></script>
         <script src="{% static 'libs/bxslider-4/dist/jquery.bxslider.min.js' %}"></script>
+        <script src="{% static 'libs/underscore/underscore-min.js' %}"></script>
+        <script src="{% static 'libs/backbone/backbone-min.js' %}"></script>
         <script src="{% static 'libs/lightbox2/src/js/lightbox.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/build/main.js' %}"></script>
     {% endcompress %}
 
     {% block extra_js %}
