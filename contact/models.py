@@ -10,6 +10,29 @@ from modelcluster.fields import ParentalKey
 from utils.models import ContactFields
 
 
+class QuickSend(models.Model):
+    """
+    Model for quick form send.
+    """
+    REASON_CHOICES = (
+        ('SOFTWARE', 'software'),
+        ('WEBSITE',  'website'),
+        ('ECOMM',    'e-commerce'),
+        ('CONSULT',  'consulting'),
+        ('BI',       'B.I.'),
+    )
+
+    reason = models.CharField(max_length=24, default="SOFTWARE", blank=True)
+    name = models.CharField(max_length=255, blank=False)
+    email = models.EmailField(blank=False)
+        
+
+
+
+########################
+#  Wagtail Components  #
+########################
+
 class FormField(AbstractFormField):
     page = ParentalKey('contact.FormPage', related_name='form_fields')
 
