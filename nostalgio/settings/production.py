@@ -3,8 +3,6 @@ import os
 
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
-
 # Compress static files offline
 # http://django-compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_OFFLINE
 
@@ -15,13 +13,9 @@ COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter',
 ]
 
-ALLOWED_HOSTS = [env("HOST_NAME"), ]
-
-DATABASES['default'] = env.db('DATABASE_URL')
-
 INSTALLED_APPS += (
     "wagtail.contrib.wagtailfrontendcache",
-    'gunicorn',
+    # 'gunicorn',
 )
 
 #support opbeat
@@ -56,16 +50,16 @@ WAGTAIL_SITE_NAME = 'Nostalg.io Website'
 # (requires the django-redis-cache package):
 # http://wagtail.readthedocs.org/en/latest/howto/performance.html#cache
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'IGNORE_EXCEPTIONS': True,
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0),
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#             'IGNORE_EXCEPTIONS': True,
+#         }
+#     }
+# }
 
 
 # Logging

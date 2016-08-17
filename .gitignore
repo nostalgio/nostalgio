@@ -2,6 +2,7 @@
 .DS_Store
 *.swp
 **/secret.py
+**/env.py
 /venv/
 /static/
 /media/

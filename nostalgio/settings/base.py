@@ -16,17 +16,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 import environ
 root = environ.Path(__file__) - 3
-env = environ.Env()
-
-
-def get_env_variable(var_name):
-    """ Get the environment variable or return exception """
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = "Set the %s environment variable" % var_name
-        raise ImproperlyConfigured(error_msg)
-
+from .env import env
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
@@ -43,11 +33,12 @@ path.append(DJANGO_ROOT)
 
 # Do not set SECRET_KEY or LDAP password or any other sensitive data here.
 # Instead, create a local.py file on the server.
+from .secret import SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = env['DJANGO_DEBUG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'nostalg.io',]
 
 
 # Application definition
@@ -226,10 +217,10 @@ WAGTAILSEARCH_RESULTS_TEMPLATE = 'utils/tags/search/search_results.html'
 # When you have multiple sites using the same Redis server,
 # specify a different Redis DB. e.g. redis://localhost/5
 
-BROKER_URL = 'redis://'
+# BROKER_URL = 'redis://'
 
-CELERY_SEND_TASK_ERROR_EMAILS = True
-CELERYD_LOG_COLOR = False
+# CELERY_SEND_TASK_ERROR_EMAILS = True
+# CELERYD_LOG_COLOR = False
 
 
 # Email settings
