@@ -25,6 +25,10 @@ urlpatterns = [
     url(r'^blog/feed/basic$', BasicFeed(), name='basic_feed'),
     url(r'^blog/feed/extended$', ExtendedFeed(), name='extended_feed'),
 
+    url(r'^api/', include('api.routers', namespace='api')),
+    url(r'^api-auth/', include('rest_framework.urls',
+            namespace='rest_framework')),
+
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
     url(r'', include(wagtail_urls)),

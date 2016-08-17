@@ -22,7 +22,8 @@ class QuickSend(models.Model):
         ('BI',       'B.I.'),
     )
 
-    reason = models.CharField(max_length=24, default="SOFTWARE", blank=True)
+    reason = models.CharField(choices=REASON_CHOICES,
+            max_length=24, default="SOFTWARE", blank=True)
     name = models.CharField(max_length=255, blank=False)
     email = models.EmailField(blank=False)
         

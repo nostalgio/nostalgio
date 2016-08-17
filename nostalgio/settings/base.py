@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'compressor',
     'taggit',
     'modelcluster',
+    'rest_framework',
 
     'wagtail.contrib.wagtailsitemaps',
     'wagtail.contrib.wagtailsearchpromotions',
@@ -82,8 +83,6 @@ INSTALLED_APPS = (
     'wagalytics',
     'wagtailfontawesome',
 
-    
-	
     'utils',
     'pages',
     'blog',
