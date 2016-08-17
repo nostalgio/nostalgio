@@ -14,8 +14,6 @@ from sys import path
 
 from django.core.exceptions import ImproperlyConfigured
 
-import environ
-root = environ.Path(__file__) - 3
 from .env import env
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
