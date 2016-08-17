@@ -10,6 +10,7 @@ let babel = require('rollup-plugin-babel'),
     ],
     js_apps = [
         'pages/static/js',
+        'contact/static/js'
     ],
     srcFromApps = function(filepath) { 
         let src = [];

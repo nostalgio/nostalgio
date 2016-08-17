@@ -28,6 +28,15 @@
     {% include "utils/includes/facebook_opengraph.html" %}
     {% include "utils/includes/twitter_cards.html" %}
     {% include "utils/includes/google_analytics.html" %}
+    <script type="text/javascript">
+        // Universal loading animation
+            var loading = '<div class="loading">'+
+                          '    <img src="{% static 'img/loading.gif' %}" alt="Loading..." />'+
+                          '</div>';
+            // Set page-specific actions
+            var js_page = '',
+                HAS_QUICK_SEND = false;
+    </script>
 </head>
     
 <body class="{% block body_class %}{% endblock %}">
@@ -107,12 +116,26 @@
     {% compress js %}
         <script src="{% static 'libs/polyfill.min.js' %}"></script>
         <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'libs/jquery.cookie/jquery.cookie.js' %}"></script>
         <script src="{% static 'libs/foundation-sites/dist/foundation.min.js' %}"></script>
         <script src="{% static 'libs/what-input/what-input.min.js' %}"></script>
         <script src="{% static 'libs/bxslider-4/dist/jquery.bxslider.min.js' %}"></script>
         <script src="{% static 'libs/underscore/underscore-min.js' %}"></script>
         <script src="{% static 'libs/backbone/backbone-min.js' %}"></script>
         <script src="{% static 'libs/lightbox2/src/js/lightbox.js' %}"></script>
+        <script type="text/javascript">
+            // Ovveride Underscore.js' template format
+            _.templateSettings = {
+                evaluate: /\{%([\s\S]+?)%\}/g,
+                interpolate: /\{\{(.+?)\}\}/g
+            };
+            // Setup CSRF for jQuery
+            $.ajaxSetup({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+                }
+            });
+        </script>
         <script src="{% static 'js/build/main.js' %}"></script>
     {% endcompress %}
 

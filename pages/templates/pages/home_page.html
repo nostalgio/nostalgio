@@ -5,6 +5,27 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
+    <!-- Modals -->
+
+
+    <div class="reveal" id="quick-send-success" data-reveal>
+        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
+        <p class="lead text-center">We have received your inquiry and will respond to you soon.</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. 206.930.2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="quick-send-error" data-reveal>
+        <h3 class="text-center">Oh no! Something Went Wrong.</h3>
+        <p class="lead text-center">Please try sending us an email directly <a href="mailto:joshua@nostalg.io">joshua@nostalg.io</a>.</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. 206.930.2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <div class="intro">
         <div class="row center-row">
             <div class="medium-6 large-4 columns">
@@ -25,20 +46,21 @@
             </div>
             <div class="medium-6 large-4 large-offset-4 columns">
                 <!-- Place rolodex of cool statements here. -->
-                <div id="quick-contact-form" class="delay-1">
-                    <form action="quick_contact" class="form compact-form" method="post" accept-charset="utf-8">
+                <div id="quick-contact-form" class="delay-1 loading-container">
+                    <form id="quick-send-form" action="/api/quicksend" class="form compact-form" method="post" accept-charset="utf-8">
                         <div>
                             <span>I want to talk about </span>
-                            <select name="" class="inline-select">
-                                <option value="">software</option>
-                                <option value="">a website</option>
-                                <option value="">e-commerce</option>
-                                <option value="">consulting</option>
+                            <select name="reason" class="inline-select">
+                                <option value="SOFTWARE">software</option>
+                                <option value="WEBSITE">a website</option>
+                                <option value="ECOMM">e-commerce</option>
+                                <option value="CONSULT">consulting</option>
+                                <option value="BI">B.I.</option>
                             </select>
                             <span> for my company or startup, please contact me: </span>
                             <br>
-                            <input type="text" name="" value="" placeholder="first and last name">
-                            <input type="email" name="" value="" placeholder="email address">
+                            <input type="text" name="name" value="" placeholder="first and last name">
+                            <input type="email" name="email" value="" placeholder="email address">
 
                             <button type="submit" class="button expanded">SEND</button>
                         </div>
@@ -84,6 +106,9 @@
 	    </div>
 	</div>
 
+    <script type="text/javascript">
+        var HAS_QUICK_SEND = true;
+    </script>
 {% endblock %}
 
 
