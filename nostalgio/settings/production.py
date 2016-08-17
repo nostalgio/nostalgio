@@ -14,7 +14,7 @@ COMPRESS_CSS_FILTERS = [
 ]
 
 INSTALLED_APPS += (
-    "wagtail.contrib.wagtailfrontendcache",
+    # "wagtail.contrib.wagtailfrontendcache",
     # 'gunicorn',
 )
 
