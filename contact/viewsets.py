@@ -42,4 +42,4 @@ class QuickSendViewSet(viewsets.ModelViewSet):
                     recipient_list=['joshua@nostalg.io'], fail_silently=True,
                     html_message=msg_html)
 
-        return super().create(request, *args, **kwargs)
+        return super(self, QuickSendViewSet).create(request, *args, **kwargs)
