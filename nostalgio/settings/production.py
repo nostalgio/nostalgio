@@ -31,7 +31,7 @@ MIDDLEWARE_CLASSES = (
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
-WAGTAIL_SITE_NAME = 'Nostalg.io Website'
+WAGTAIL_SITE_NAME = 'nostalg.io'
 
 # Send notification emails as a background task using Celery,
 # to prevent this from blocking web server threads
