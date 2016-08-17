@@ -9,51 +9,48 @@ var QuickSendView = Backbone.View.extend({
         'click button': 'sendForm'
     },
 
-    initiliaze: function(options) {
+    initiliaze: function initiliaze(options) {},
 
-    },
-
-    sendForm: function(e) {
+    sendForm: function sendForm(e) {
         e.preventDefault();
-        let data = this.$el.serialize(),
+        var data = this.$el.serialize(),
             self = this;
         this.$el.append(loading);
         this.model.save(null, {
             data: data,
-            success: function(model, response) {
+            success: function success(model, response) {
                 $('#quick-send-success').foundation('open');
                 self.$el[0].reset();
             },
-            error: function(model, response) {
+            error: function error(model, response) {
                 var errors = response.responseJSON;
                 $('#quick-send-error').foundation('open');
             },
-            complete: function() {
+            complete: function complete() {
                 self.$el.find('div.loading').remove();
             }
         });
-    } 
+    }
 });
 
 $(document).foundation();
 
- $(document).ready(function(){
+$(document).ready(function () {
 
     $('.testimonials').bxSlider({
-      auto: true,
-      mode: 'vertical',
-      pager: false,
-      controls: false,
-      slideMargin:3,
-     });
-      
-    $('.adverts').bxSlider({
-      minSlides: 3,
-      maxSlides: 3,
-      slideWidth: 210,
-      slideMargin: 15
+        auto: true,
+        mode: 'vertical',
+        pager: false,
+        controls: false,
+        slideMargin: 3
     });
 
+    $('.adverts').bxSlider({
+        minSlides: 3,
+        maxSlides: 3,
+        slideWidth: 210,
+        slideMargin: 15
+    });
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -69,12 +66,13 @@ $(document).foundation();
         }, 600);
         return false;
     });
- });
+});
 
 if (HAS_QUICK_SEND === true) {
-    let form = new QuickSend(),
+    var form = new QuickSend(),
         formView = new QuickSendView({ model: form });
     formView.render();
 }
 
 console.log('test');
+//# sourceMappingURL=main.js.map
