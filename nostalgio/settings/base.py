@@ -189,8 +189,7 @@ GA_VIEW_ID = ''
 
 
 # Google Maps Key
-
-GOOGLE_MAPS_KEY = ''
+from .secret import GOOGLE_MAPS_KEY
 DYNAMIC_MAP_URL = ''
 STATIC_MAP_URL = ''
 
@@ -199,7 +198,7 @@ STATIC_MAP_URL = ''
 LOGIN_URL = 'wagtailadmin_login'
 LOGIN_REDIRECT_URL = 'wagtailadmin_home'
 
-WAGTAIL_SITE_NAME = "Nostalg.io Website"
+WAGTAIL_SITE_NAME = "nostalg.io"
 
 WAGTAILSEARCH_RESULTS_TEMPLATE = 'utils/tags/search/search_results.html'
 
