@@ -184,9 +184,7 @@ COMPRESS_PRECOMPILERS = (
 COMPRESS_OFFLINE = True
 
 # Settings for wagalytics
-GA_KEY_FILEPATH = ''
-GA_VIEW_ID = ''
-
+from .secret import GA_KEY_FILEPATH, GA_VIEW_ID
 
 # Google Maps Key
 from .secret import GOOGLE_MAPS_KEY
