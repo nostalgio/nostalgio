@@ -1,20 +1,37 @@
 $(document).foundation();
 
- $(document).ready(function(){
+$(document).ready(function(){
+
+    $('.bxslider').bxSlider();
+
+    $(document).ready(function() {
+        $('#faq .block-faq_question').click(function() {
+            $(this).next('.block-faq_answer').slideToggle(500);
+            $(this).toggleClass('close');
+        });
+    });
+
+    $('.reveal_modal').click(function(event) {
+        event.preventDefault();
+
+        $('#modal-content').empty();
+        var link = $(this).attr("href");
+        $('#modal-content').load(link + " .modal-content");
+    });
 
     $('.testimonials').bxSlider({
-      auto: true,
-      mode: 'vertical',
-      pager: false,
-      controls: false,
-      slideMargin:3,
-     });
-      
+        auto: true,
+        mode: 'vertical',
+        pager: false,
+        controls: false,
+        slideMargin:3,
+    });
+
     $('.adverts').bxSlider({
-      minSlides: 3,
-      maxSlides: 3,
-      slideWidth: 210,
-      slideMargin: 15
+        minSlides: 3,
+        maxSlides: 3,
+        slideWidth: 210,
+        slideMargin: 15
     });
 
 
@@ -32,4 +49,5 @@ $(document).foundation();
         }, 600);
         return false;
     });
- });
+});
+
