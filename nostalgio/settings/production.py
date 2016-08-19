@@ -33,6 +33,8 @@ MIDDLEWARE_CLASSES = (
 
 WAGTAIL_SITE_NAME = 'nostalg.io'
 
+from .secret import GOOGLE_ANALYTICS_KEY
+
 # Send notification emails as a background task using Celery,
 # to prevent this from blocking web server threads
 # (requires the django-celery package):
