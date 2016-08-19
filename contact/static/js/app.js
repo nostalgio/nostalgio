@@ -6,5 +6,3 @@ if (HAS_QUICK_SEND === true) {
         formView = new QuickSendView({ model: form });
     formView.render();
 }
-
-console.log('test');

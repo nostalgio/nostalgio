@@ -43,3 +43,18 @@ class QuickSendViewSet(viewsets.ModelViewSet):
                     html_message=msg_html)
 
         return super(QuickSendViewSet, self).create(request, *args, **kwargs)
+
+    def list(self, request, *args, **kwargs):
+        return Response({'status': 'Nice Try!'})
+
+    def retrieve(self, request, pk=None, *args, **kwargs):
+        return Response({'status': 'Nice Try!'})
+
+    def update(self, request, pk=None, *args, **kwargs):
+        return Response({'status': 'Nice Try!'})
+
+    def partial_update(self, request, pk=None, *args, **kwargs):
+        return Response({'status': 'Nice Try!'})
+
+    def destroy(self, request, pk=None, *args, **kwargs):
+        return Response({'status': 'Nice Try!'})
