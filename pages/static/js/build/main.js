@@ -9,44 +9,46 @@ var QuickSendView = Backbone.View.extend({
         'click button': 'sendForm'
     },
 
-    initiliaze: function initiliaze(options) {},
+    initiliaze: function(options) {
 
-    sendForm: function sendForm(e) {
+    },
+
+    sendForm: function(e) {
         e.preventDefault();
-        var data = this.$el.serialize(),
+        let data = this.$el.serialize(),
             self = this;
         this.$el.append(loading);
         this.model.save(null, {
             data: data,
-            success: function success(model, response) {
+            success: function(model, response) {
                 $('#quick-send-success').foundation('open');
                 self.$el[0].reset();
             },
-            error: function error(model, response) {
+            error: function(model, response) {
                 var errors = response.responseJSON;
                 $('#quick-send-error').foundation('open');
             },
-            complete: function complete() {
+            complete: function() {
                 self.$el.find('div.loading').remove();
             }
         });
-    }
+    } 
 });
 
 $(document).foundation();
 
-$(document).ready(function () {
+$(document).ready(function(){
 
     $('.bxslider').bxSlider();
 
-    $(document).ready(function () {
-        $('#faq .block-faq_question').click(function () {
+    $(document).ready(function() {
+        $('#faq .block-faq_question').click(function() {
             $(this).next('.block-faq_answer').slideToggle(500);
             $(this).toggleClass('close');
         });
     });
 
-    $('.reveal_modal').click(function (event) {
+    $('.reveal_modal').click(function(event) {
         event.preventDefault();
 
         $('#modal-content').empty();
@@ -59,7 +61,7 @@ $(document).ready(function () {
         mode: 'vertical',
         pager: false,
         controls: false,
-        slideMargin: 3
+        slideMargin:3,
     });
 
     $('.adverts').bxSlider({
@@ -69,7 +71,8 @@ $(document).ready(function () {
         slideMargin: 15
     });
 
-    $(window).scroll(function () {
+
+    $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -77,16 +80,16 @@ $(document).ready(function () {
         }
     });
 
-    $('.scrollup').click(function () {
+    $('.scrollup').click(function() {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
         return false;
     });
 
-    $('.scrolldown').click(function () {
+    $('.scrolldown').click(function() {
         $("html, body").animate({
-            scrollTop: $(window).innerHeight() - 44
+            scrollTop: ($(window).innerHeight() - 40)
         }, 600);
         return false;
     });
@@ -101,26 +104,26 @@ $(document).ready(function () {
         if (windowWidth < MOBILE_WIDTH) {
             $('.intro').stop().removeAttr('style');
             $('.vertical-center').stop().removeAttr('style');
-        } else if (windowHeight - MENU_HEIGHT < divHeight) {
-            $('.intro').css({ 'height': 'auto' });
+        } else if ((windowHeight - MENU_HEIGHT) < divHeight) {
+            $('.intro').css({ 'height': 'auto'});
         } else if (windowWidth > MOBILE_WIDTH) {
-            $('.intro').css({ 'height': '100vh' });
+            $('.intro').css({ 'height': '100vh'});
             // Vertically align
             $('.vertical-center').animate({
-                'margin-top': windowHeight / 2 - divHeight / 2 + FUDGE
+                'margin-top': (windowHeight/2 - divHeight/2 + FUDGE)
             });
         }
     };
 
     center_divs();
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         center_divs();
     });
 });
 
+
 if (HAS_QUICK_SEND === true) {
-    var form = new QuickSend(),
+    let form = new QuickSend(),
         formView = new QuickSendView({ model: form });
     formView.render();
 }
-//# sourceMappingURL=main.js.map

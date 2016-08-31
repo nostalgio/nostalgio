@@ -52,7 +52,7 @@ $(document).ready(function(){
 
     $('.scrolldown').click(function() {
         $("html, body").animate({
-            scrollTop: ($(window).innerHeight() - 44)
+            scrollTop: ($(window).innerHeight() - 40)
         }, 600);
         return false;
     });

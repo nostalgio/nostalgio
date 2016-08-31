@@ -97,6 +97,9 @@ img.richtext-image
 // Universal
 h5
     @extend .p-font
+h2
+    @media #{$small-only}
+        font-size: 2rem
     
 .close-button
     background: none
@@ -198,8 +201,7 @@ div.loading
     .column:hover
         h5
             background: $tertiary
-        p
-            color: $tertiary 
+
 
 
 
