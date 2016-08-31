@@ -84,6 +84,13 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.scrolldown').click(function () {
+        $("html, body").animate({
+            scrollTop: $(window).innerHeight() - 44
+        }, 600);
+        return false;
+    });
+
     var center_divs = function center_divs() {
         var MENU_HEIGHT = 54,
             FUDGE = 10,

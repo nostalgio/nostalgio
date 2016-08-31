@@ -35,7 +35,7 @@ $(document).ready(function(){
     });
 
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -43,9 +43,16 @@ $(document).ready(function(){
         }
     });
 
-    $('.scrollup').click(function () {
+    $('.scrollup').click(function() {
         $("html, body").animate({
             scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+    $('.scrolldown').click(function() {
+        $("html, body").animate({
+            scrollTop: ($(window).innerHeight() - 44)
         }, 600);
         return false;
     });

@@ -37,6 +37,7 @@
 
 .tagtext
     @extend .header-font
+    text-shadow: 1px 1px 1px #555
     font-size: 2rem
     @media screen and (max-width: 380px)
         font-size: 1.6rem
@@ -53,6 +54,26 @@
 .delay-5
     @include fadein(2.5s)
 .inline-select
+
+.scrolldown
+    left: 50%
+    margin-left: -30px
+    width: 60px
+    cursor: pointer
+    @media #{$medium-up}
+        position: absolute
+        bottom: 25px
+    
+#home-content-header
+    text-shadow: 1px 1px 1px #DDD
+    p
+        @extend .p-font
+        font-size: 2.3rem
+        color: $tundora
+        @media #{$small-only}
+            font-size: 1.7rem
+        
+
 
 #carousel
     margin-top: 30px

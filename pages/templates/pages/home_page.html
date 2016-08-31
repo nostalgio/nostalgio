@@ -27,9 +27,9 @@
     </div>
 
     <div class="intro">
-        <div class="row center-row" data-equalizer data-equalize-on="medium">
+        <div class="row center-row" data-equalizer="intro" data-equalize-on="medium">
             <div class="medium-6 large-4 columns">
-                <div id="tagline" class="delay-2 vertical-center" data-equalizer-watch>
+                <div id="tagline" class="delay-2 vertical-center" data-equalizer-watch="intro">
                     <div class="tagtext delay-3 hide-for-small-only">
                         Timeless Design
                     </div>
@@ -48,11 +48,11 @@
             </div>
             <div class="medium-6 large-4 large-offset-4 columns">
                 <!-- Place rolodex of cool statements here. -->
-                <div id="quick-contact-form" class="delay-1 loading-container vertical-center" data-equalizer-watch>
+                <div id="quick-contact-form" class="delay-1 loading-container vertical-center" data-equalizer-watch="intro">
                     <form id="quick-send-form" action="." class="form compact-form" method="post" accept-charset="utf-8">
                         <div>
                             <div class="row collapse">
-                                <div class="small-5 columns">
+                                <div class="small-5 columns noflow">
                                     Message
                                 </div>
                                 <div class="small-3 columns text-center">
@@ -84,44 +84,83 @@
                     </form>
                 </div>
             </div>
+
+            <!-- Down arrow -->
+            <div class="small-12 columns text-center">
+                <img class="scrolldown" src="{% static 'img/down.png' %}" alt="Learn More">
+            </div>
+
         </div>
-        
-        
     </div>
 
     <div class="section">
         <div class="row text-center">
             <div class="medium-10 medium-centered columns">
-                <h3><strong>{{ self.title_text|richtext }}</strong></h3>
-                {{ self.body|richtext }}
+                <h2 id="home-content-header">
+                    {{ self.title_text|richtext }}
+                </h2>
+                <h2>~ Nostalgio ~</h2>
+                <h4 id="home-content-subheader">
+                    {{ self.body|richtext }}
+                </h4>
+                
+                {% comment %}
                 <div id="carousel">
                     {% include "pages/includes/bx_carousel.html" with carousel_items=self.carousel_items.all only  %}
                 </div>
+                {% endcomment %}
             </div>
         </div>
     </div>
 
-	<div class="section">
-	    <div id="icons" class="row text-center">
-	    <h3><strong>Featuring</strong></h3>
-	    <br>
-	    <div class="medium-up-3 small-up-1" data>
-	        {% for block in self.content_items.all %}
-	        <div class="column icon grow">
-	            <a href="{{ block.link }}" target="_blank">
-	                <div class="callout">
-	                 {% if block.image %}
-	                    {% image block.image fill-70x70 %}
-	                 {% endif %}
-	                 <h5><strong>{{ block.title}}</strong></h5>
-	                 {{ block.content|richtext }}
-	                </div>
-	            </a>
-	        </div>
-	       {% endfor %}
-	    </div>
-	    </div>
-	</div>
+    <div id="service-details" class="section" data-equalizer="service" data-equalize-on="medium">
+        <div class="row">
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>Business Intelligence</h4>
+            </div>
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>Startup Apps</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>E-Commerce</h4>
+            </div>
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>Process Management</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>Big Data</h4>
+            </div>
+            <div class="medium-6 small-12 columns" data-equalizer-watch="service">
+                <h4>Custom Software</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div id="icons" class="row text-center">
+            <h3><strong>Featured Posts</strong></h3>
+            <br>
+            <div class="medium-up-3 small-up-1" data>
+                {% for block in self.content_items.all %}
+                <div class="column icon grow">
+                    <a href="{{ block.link }}" target="_blank">
+                        <div class="callout">
+                         {% if block.image %}
+                            {% image block.image fill-70x70 %}
+                         {% endif %}
+                         <h5><strong>{{ block.title}}</strong></h5>
+                         {{ block.content|richtext }}
+                        </div>
+                    </a>
+                </div>
+               {% endfor %}
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         var HAS_QUICK_SEND = true;
