@@ -14,7 +14,7 @@
     <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poiret+One|Mandali|Noto+Serif:400i">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i|Poiret+One" rel="stylesheet">
     {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'libs/foundation-sites/dist/foundation.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'libs/bxslider-4/dist/jquery.bxslider.min.css' %}">
@@ -54,27 +54,26 @@
                     <div class="row">
                         <div class="small-12 columns">
                             <div class="headline">
-                                <h4>
+                                <h3>
                                     <div class="rich-text">
                                         <p>What our customers are saying</p>
                                     </div>
-                                </h4>
+                                </h3>
                             </div>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="medium-6 columns">
-                            <blockquote>
+                            <div class="quotes">
                                 "I'm getting a lot of compliments on the website. Good job."
                                 <cite>Mike from Musiak Safety</cite>
-                            </blockquote>
+                            </div>
                         </div>
                         <div class="medium-6 columns">
-                            <blockquote>
+                            <div class="quotes">
                                 "WOW, WOW, WOW! ... I just tested everything and it looks great!"
                                 <cite>Kim from PNA Innovations</cite>
-                            </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>

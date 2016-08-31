@@ -31,6 +31,7 @@
         margin-top: 52px
     text-align: center
     p
+        @extend .fancy-font
         font-size: 1.7rem
         @media screen and (max-width: 380px)
             font-size: 1.6rem  
@@ -68,7 +69,7 @@
     text-shadow: 1px 1px 1px #DDD
     p
         @extend .p-font
-        font-size: 2.3rem
+        font-size: 2.2rem
         color: $tundora
         @media #{$small-only}
             font-size: 1.7rem
@@ -140,6 +141,20 @@
         height: 100%
         
 
+// Client quotes
+.headline
+    h3
+        color: $white
+
+.quotes
+    @extend .fancy-font
+    color: $white
+    font-size: 1.4rem
+    padding-left: 30px
+    padding-right: 30px
+    cite
+        font-size: 1.1rem
+        margin-bottom: 15px
 
 
 // FORMS
@@ -171,6 +186,7 @@
         margin-bottom: 0
     input
         margin-bottom: 0.5rem
+        margin-top: 0.25rem
         background-color: rgba(60, 7, 24, 0.1)
         color: $white
         font-size: 1.5rem
