@@ -1,6 +1,22 @@
 // Contact form
 .contact-form
     br
-        claer: both
+        clear: both
     input.button
         margin-top: 10px
+
+
+// Quick contact form
+#quick-contact-form
+    hr
+        margin-top: 5px
+        margin-bottom: 5px
+    .switch
+        margin-bottom: 0
+        margin-top: 8px
+        @media screen and (min-width: 64em) and (max-width: 72em)
+            margin-top: 4px
+        @media screen and (max-width: 380px)
+            margin-top: 0px
+    .switch-paddle::after
+        background-color: $gold

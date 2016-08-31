@@ -27,28 +27,45 @@
     </div>
 
     <div class="intro">
-        <div class="row center-row">
+        <div class="row center-row" data-equalizer data-equalize-on="medium">
             <div class="medium-6 large-4 columns">
-                <div id="tagline">
-                    <div>
-                        &nbsp;
-                    </div>
-                    <div class="tagtext delay-2">
+                <div id="tagline" class="delay-2 vertical-center" data-equalizer-watch>
+                    <div class="tagtext delay-3 hide-for-small-only">
                         Timeless Design
                     </div>
-                    <div class="tagtext delay-3 hide-for-small-only">
-                        { + }
+                    <div class="tagtext delay-4 hide-for-small-only">
+                        &amp;
                     </div>
-                    <div class="tagtext delay-4">
+                    <div class="tagtext delay-5 hide-for-small-only">
                         Craftsmanship Code
-                    </div>                    
+                    </div>
+                    <hr class="hide-for-small-only">
+                    <p>
+                        Affordable, handmade, web apps.
+                        Coded with love in the USA.
+                    </p>                
                 </div>
             </div>
             <div class="medium-6 large-4 large-offset-4 columns">
                 <!-- Place rolodex of cool statements here. -->
-                <div id="quick-contact-form" class="delay-1 loading-container">
+                <div id="quick-contact-form" class="delay-1 loading-container vertical-center" data-equalizer-watch>
                     <form id="quick-send-form" action="." class="form compact-form" method="post" accept-charset="utf-8">
                         <div>
+                            <div class="row collapse">
+                                <div class="small-5 columns">
+                                    Message
+                                </div>
+                                <div class="small-3 columns text-center">
+                                    <div class="switch">
+                                        <input class="switch-input" id="contact_switch" type="checkbox" name="contact_switch" value="">
+                                        <label class="switch-paddle" for="contact_switch"></label>
+                                    </div>
+                                </div>
+                                <div class="small-4 columns text-right">
+                                    Quote
+                                </div>
+                            </div>
+                            <hr>
                             <span>I want to talk about </span>
                             <select name="reason" class="inline-select">
                                 <option value="SOFTWARE">software</option>

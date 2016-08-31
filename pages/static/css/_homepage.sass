@@ -22,49 +22,46 @@
         max-width: 72em !important
 
 #tagline
+    @extend .shadow2
+    padding: 15px 20px
     margin-top: 30vh
-    div:nth-child(2)
-        margin-top: 40px
+    background-color: rgba(60, 7, 24, 0.85)
+    color: $white
     @media #{$small-only}
-        margin-top: 15px
-        div:nth-child(2)
-            margin-top: 20px
+        margin-top: 52px
     text-align: center
-    
+    p
+        font-size: 1.7rem
+        @media screen and (max-width: 380px)
+            font-size: 1.6rem  
 
 .tagtext
-    @extend .header-font, .shadow2
-    margin: 0.5rem 0
-    padding: 0.5rem
-    background-color: rgba(60, 7, 24, 0.85)
-    color: $gold
+    @extend .header-font
     font-size: 2rem
     @media screen and (max-width: 380px)
-        font-size: 1.5rem
+        font-size: 1.6rem
     font-weight: bold
 
 .delay-1
-    @include fadein(.7s)
+    @include fadein(.5s)
 .delay-2
-    @include fadein(1.4s)
+    @include fadein(1s)
 .delay-3
-    @include fadein(2.1s)
+    @include fadein(1.5s)
 .delay-4
-    @include fadein(2.8s)
-    @media #{$small-only}
-        @include fadein(2.1s)
+    @include fadein(2s)
+.delay-5
+    @include fadein(2.5s)
 .inline-select
-
 
 #carousel
     margin-top: 30px
-
 
 #quick-contact-form
     @extend .shadow2
     margin-top: 30vh
     @media #{$small-only}
-        margin-top: 5px 
+        margin-top: 12px 
         margin-bottom: 15px
     background-color: rgba(60, 7, 24, 0.85)
     color: $white

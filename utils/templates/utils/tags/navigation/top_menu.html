@@ -41,18 +41,6 @@
                             {% endif %}
                         {% endfor %}
                         </li>
-                        <li class="has-form show-for-small-only" style="background: transparent;">
-                            <form action ="{% url 'wagtailsearch_search' %}" method="get">
-                                <div class="row collapse">
-                                    <div class="small-8 columns">
-                                        <input class="field" type="text" placeholder="Search" name="q"{% if query_string %} value="{{ query_string }}"{% endif %}>
-                                    </div>
-                                    <div class="small-4 columns">
-                                        <input type="submit" class="secondary button expand" value="Search">
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
                     </ul>
                 </div>
             </div>

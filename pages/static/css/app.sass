@@ -45,17 +45,16 @@
 // Static files
 $static: static
 
-
-
 $header-font-color: $tundora !default
 
-// Fonts
 @import 'fonts'
 @import 'colors'
 @import 'utils'
 @import 'menu'
 @import 'homepage'
-
+@import 'blog'
+@import 'social'
+@import 'forms'
 
 
 // Responsive image/video classes
@@ -172,53 +171,6 @@ div.loading
 .list-style li
     list-style: none
 
-
-// Sharing and social
-.share-buttons
-    list-style: none
-    padding: 0
-    margin: 0 0 5px
-ul.share-buttons li
-    display: inline
-    margin-right: 10px
-ul.share-buttons .fa
-    min-width: 30px
-.share-buttons
-    .button.expanded, .button.tiny
-        padding: 6px 8px
-        font-size: 1.2rem
-        border-radius: 5px
-    .button.expanded
-        margin-bottom: 0
-    .facebook
-        background: #3b5998
-    .twitter
-        background: #00aced
-    .google
-        background: #dd4b39
-    .linkedin
-        background: #007bb6
-    .pin
-        background: #cb2027
-    .mail
-        background: #00bf8f
-    .whatsapp
-        background: #43d854
-
-#content
-    padding: 15px 0
-    min-height: 100vh
-
-#social_bar
-    background: $secondary
-    text-align: right
-    a
-        color: $white
-        margin-right: 8px
-        font-size: 20px
-
-
-
 // Section
 .section
     background: $off-white
@@ -245,31 +197,7 @@ ul.share-buttons .fa
         p
             color: $tertiary 
 
-// Blog
-#blog_list
-     hr:last-of-type
-        border: 0px
-     a p
-        color: $tundora
 
-#tags
-    a
-        color: $white
-
-#blog-rss
-    color: $white
-
-#people
-    .people
-        text-align: center
-        img
-            border-radius: 3px
-            margin-bottom: 8px
-        .panel
-            padding: 10px
-    #contact-info
-        li
-            list-style: none
 
 #side_menu
     h6.title
@@ -353,18 +281,6 @@ ul.share-buttons .fa
     blockquote
         border-left: 0px
 
-#search
-    input[type="text"]
-        border-top-left-radius: 5px
-        border-bottom-left-radius: 5px
-        font-size: 1.2rem
-        padding-left: 15px
-    input.button
-        border-top-right-radius: 5px
-        border-bottom-right-radius: 5px
-        color: $white
-        padding-top: 11px
-
 .tag-names li
     background: $primary
     border-radius: 2px
@@ -374,7 +290,6 @@ ul.share-buttons .fa
     margin: 0px 3px
     a
         color: $white
-
 
 #faq
     .block-faq_answer
