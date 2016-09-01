@@ -109,7 +109,7 @@ $(document).ready(function(){
         } else if (windowWidth > MOBILE_WIDTH) {
             $('.intro').css({ 'height': '100vh'});
             // Vertically align
-            $('.vertical-center').animate({
+            $('.vertical-center').stop().animate({
                 'margin-top': (windowHeight/2 - divHeight/2 + FUDGE)
             });
         }
