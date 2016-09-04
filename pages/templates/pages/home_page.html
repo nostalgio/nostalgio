@@ -95,7 +95,7 @@
 
     <div class="section">
         <div class="row text-center">
-            <div class="medium-10 medium-centered columns">
+            <div class="medium-10 medium-centered large-9 large-centered columns">
                 <h2 id="home-content-header">
                     {{ self.title_text|richtext }}
                 </h2>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="{% static 'img/pie-charts-redacted.png' %}" alt="">
+                            <img src="{% static 'img/business-intelligence.jpg' %}" alt="Business Intelligence Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="" alt="">
+                            <img src="{% static 'img/startup-software.jpg' %}" alt="Hynt Startup App Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
@@ -156,7 +156,7 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="" alt="">
+                            <img src="{% static 'img/e-commerce.jpg' %}" alt="EU Active Wear E-Commerce Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
@@ -173,11 +173,11 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="" alt="">
+                            <img src="{% static 'img/process-management.gif' %}" alt="Custom Software Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
-                                Blah, blah, blah. Text text text.
+                                Increase productivity and automate your most tedious processes. Reduce risk and eliminate human error.
                             </p>
                         </div>
                     </div>
@@ -190,11 +190,11 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="" alt="">
+                            <img src="{% static 'img/big-data.jpg' %}" alt="Big Data Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
-                                Blah, blah, blah. Text text text.
+                                You don't have to be <em>BIG</em> to take advantage of big data. At Nostalg.io, we get data&mdash;and understand its importance.
                             </p>
                         </div>
                     </div>
@@ -207,11 +207,11 @@
                     </div>
                     <div class="hover-box" data-equalizer-watch="service">
                         <div class="img-content">
-                            <img src="" alt="">
+                            <img src="{% static 'img/custom-cms.gif' %}" alt="Custom CMS Screenshot">
                         </div>
                         <div class="text-content" data-equalizer-watch="service-text">
                             <p>
-                                Blah, blah, blah. Text text text.
+                                Beautifully designed websites with pure, custom functionality. We use the elegant <a href="https://wagtail.io/" target="_blank">Wagtail CMS</a>, and prices start at just $5K. 
                             </p>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
 
     <div class="section">
         <div id="icons" class="row text-center">
-            <h3><strong>Featured Posts</strong></h3>
+            <h2>Featured Posts</h2>
             <br>
             <div class="medium-up-3 small-up-1" data>
                 {% for block in self.content_items.all %}
@@ -230,9 +230,9 @@
                     <a href="{{ block.link }}" target="_blank">
                         <div class="callout">
                          {% if block.image %}
-                            {% image block.image fill-70x70 %}
+                            {% image block.image fill-160x90 %}
                          {% endif %}
-                         <h5><strong>{{ block.title}}</strong></h5>
+                         <h5>{{ block.title}}</h5>
                          {{ block.content|richtext }}
                         </div>
                     </a>
@@ -241,6 +241,30 @@
             </div>
         </div>
     </div>
+
+    <!-- Do this later.
+    <div class="section">
+        <div class="row text-center">
+            <h2>Clients</h2>
+            <br>
+            <div class="large-5 medium-3 small-2 columns">
+                
+            </div>
+            <div class="large-5 medium-3 small-2 columns">
+                
+            </div>
+            <div class="large-5 medium-3 small-2 columns">
+                
+            </div>
+            <div class="large-5 medium-3 small-2 columns">
+                
+            </div>
+            <div class="large-5 medium-3 small-2 columns">
+                
+            </div>
+        </div>
+    </div>
+    -->
 
     <script type="text/javascript">
         var HAS_QUICK_SEND = true;
