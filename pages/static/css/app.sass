@@ -95,12 +95,19 @@ img.richtext-image
 
 
 // Universal
+html
+    height: 100%
+body
+    height: 100%
 h5
     @extend .p-font
 h2
     @media #{$small-only}
         font-size: 2rem
-    
+h4
+    @media #{$small-only}
+        font-size: 1.6rem
+
 .close-button
     background: none
 

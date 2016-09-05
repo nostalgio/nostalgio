@@ -9,46 +9,45 @@ var QuickSendView = Backbone.View.extend({
         'click button': 'sendForm'
     },
 
-    initiliaze: function(options) {
+    initiliaze: function initiliaze(options) {},
 
-    },
-
-    sendForm: function(e) {
+    sendForm: function sendForm(e) {
         e.preventDefault();
-        let data = this.$el.serialize(),
+        var data = this.$el.serialize(),
             self = this;
         this.$el.append(loading);
         this.model.save(null, {
             data: data,
-            success: function(model, response) {
+            success: function success(model, response) {
                 $('#quick-send-success').foundation('open');
                 self.$el[0].reset();
             },
-            error: function(model, response) {
+            error: function error(model, response) {
                 var errors = response.responseJSON;
                 $('#quick-send-error').foundation('open');
             },
-            complete: function() {
+            complete: function complete() {
                 self.$el.find('div.loading').remove();
             }
         });
-    } 
+    }
 });
 
 $(document).foundation();
 
-$(document).ready(function(){
+$(document).ready(function () {
+    var MOBILE_WIDTH = 640;
 
     $('.bxslider').bxSlider();
 
-    $(document).ready(function() {
-        $('#faq .block-faq_question').click(function() {
+    $(document).ready(function () {
+        $('#faq .block-faq_question').click(function () {
             $(this).next('.block-faq_answer').slideToggle(500);
             $(this).toggleClass('close');
         });
     });
 
-    $('.reveal_modal').click(function(event) {
+    $('.reveal_modal').click(function (event) {
         event.preventDefault();
 
         $('#modal-content').empty();
@@ -61,7 +60,7 @@ $(document).ready(function(){
         mode: 'vertical',
         pager: false,
         controls: false,
-        slideMargin:3,
+        slideMargin: 3
     });
 
     $('.adverts').bxSlider({
@@ -71,8 +70,7 @@ $(document).ready(function(){
         slideMargin: 15
     });
 
-
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -80,16 +78,17 @@ $(document).ready(function(){
         }
     });
 
-    $('.scrollup').click(function() {
+    $('.scrollup').click(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
         return false;
     });
 
-    $('.scrolldown').click(function() {
+    $('.scrolldown').click(function () {
+        var toTop = $('.intro').innerHeight() - 42;
         $("html, body").animate({
-            scrollTop: ($(window).innerHeight() - 40)
+            scrollTop: toTop
         }, 600);
         return false;
     });
@@ -97,33 +96,32 @@ $(document).ready(function(){
     var center_divs = function center_divs() {
         var MENU_HEIGHT = 54,
             FUDGE = 10,
-            MOBILE_WIDTH = 640,
             divHeight = $('.vertical-center').innerHeight(),
             windowHeight = $(window).innerHeight(),
             windowWidth = $(window).innerWidth();
         if (windowWidth < MOBILE_WIDTH) {
             $('.intro').stop().removeAttr('style');
             $('.vertical-center').stop().removeAttr('style');
-        } else if ((windowHeight - MENU_HEIGHT) < divHeight) {
-            $('.intro').css({ 'height': 'auto'});
+        } else if (windowHeight - MENU_HEIGHT < divHeight) {
+            $('.intro').css({ 'height': 'auto' });
         } else if (windowWidth > MOBILE_WIDTH) {
-            $('.intro').css({ 'height': '100vh'});
+            $('.intro').css({ 'height': '100vh' });
             // Vertically align
             $('.vertical-center').stop().animate({
-                'margin-top': (windowHeight/2 - divHeight/2 + FUDGE)
+                'margin-top': windowHeight / 2 - divHeight / 2 + FUDGE
             });
         }
     };
 
     center_divs();
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
         center_divs();
     });
 });
 
-
 if (HAS_QUICK_SEND === true) {
-    let form = new QuickSend(),
+    var form = new QuickSend(),
         formView = new QuickSendView({ model: form });
     formView.render();
 }
+//# sourceMappingURL=main.js.map

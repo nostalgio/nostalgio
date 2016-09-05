@@ -1,6 +1,7 @@
 $(document).foundation();
 
 $(document).ready(function(){
+    const MOBILE_WIDTH = 640;
 
     $('.bxslider').bxSlider();
 
@@ -51,8 +52,9 @@ $(document).ready(function(){
     });
 
     $('.scrolldown').click(function() {
+        var toTop = $('.intro').innerHeight() - 42;
         $("html, body").animate({
-            scrollTop: ($(window).innerHeight() - 40)
+            scrollTop: toTop
         }, 600);
         return false;
     });
@@ -60,7 +62,6 @@ $(document).ready(function(){
     var center_divs = function center_divs() {
         var MENU_HEIGHT = 54,
             FUDGE = 10,
-            MOBILE_WIDTH = 640,
             divHeight = $('.vertical-center').innerHeight(),
             windowHeight = $(window).innerHeight(),
             windowWidth = $(window).innerWidth();
