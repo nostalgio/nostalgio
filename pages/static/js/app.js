@@ -39,8 +39,14 @@ $(document).ready(function(){
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
+            $('#logo').css({
+                'height': '38px'
+            });
         } else {
             $('.scrollup').fadeOut();
+            $('#logo').css({
+                'height': '80px'
+            });
         }
     });
 
