@@ -11,7 +11,17 @@
     <div class="reveal" id="quick-send-success" data-reveal>
         <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
         <p class="lead text-center">We have received your inquiry and will respond to you soon.</p>
-        <p class="text-center">Also, feel free to call us during normal business hours. 206.930.2645</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="quick-quote-success" data-reveal>
+        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
+        <p class="lead text-center">We have received your request and will respond to you soon.</p>
+        <p class="text-center">Our current rate for software development is $120/hr.</p>
+        <p class="text-center">Feel free to call us during normal business hours. (206) 930-2645</p>
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -20,7 +30,7 @@
     <div class="reveal" id="quick-send-error" data-reveal>
         <h3 class="text-center">Oh no! Something Went Wrong.</h3>
         <p class="lead text-center">Please try sending us an email directly <a href="mailto:joshua@nostalg.io">joshua@nostalg.io</a>.</p>
-        <p class="text-center">Also, feel free to call us during normal business hours. 206.930.2645</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -86,7 +96,7 @@
                             </p>
                             <div class="row">
                                 <div class="small-3 columns">
-                                    <label for="" class="text-right">Name:</label>
+                                    <label for="name" class="text-right">Name:</label>
                                 </div>
                                 <div class="small-9 columns">
                                     <input type="text" name="name" value="" placeholder="first and last name">
@@ -94,7 +104,7 @@
                             </div>
                             <div class="row">
                                 <div class="small-3 columns">
-                                    <label for="" class="text-right">Email:</label>
+                                    <label for="email" class="text-right">Email:</label>
                                 </div>
                                 <div class="small-9 columns">
                                     <input type="email" name="email" value="" placeholder="email address">
@@ -102,7 +112,7 @@
                             </div>
                             <div class="row">
                                 <div class="small-3 columns">
-                                    <label for="" class="text-right">Phone:</label>
+                                    <label for="phone" class="text-right">Phone:</label>
                                 </div>
                                 <div class="small-9 columns">
                                     <input type="tel" name="phone" value="" placeholder="000-000-0000">
@@ -110,10 +120,10 @@
                             </div>
                             <div class="row">
                                 <div class="small-3 columns">
-                                    <label for="" class="text-right">Project:</label>
+                                    <label for="project" class="text-right">Project:</label>
                                 </div>
                                 <div class="small-9 columns">
-                                    <textarea name="description" placeholder="Briefly describe your project."></textarea>
+                                    <textarea name="project" placeholder="Briefly describe your project."></textarea>
                                 </div>
                             </div>
                         </div>

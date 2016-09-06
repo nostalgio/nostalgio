@@ -2,6 +2,7 @@ export var QuickSendView = Backbone.View.extend({
     el: '#quick-send-form',
     container: '#quick-send-container',
     taglineContainer: '#tagline-container',
+    formContent: '#contact-form-content',
     CONTACT: 'contact',
     QUOTE: 'quote',
 
@@ -14,6 +15,10 @@ export var QuickSendView = Backbone.View.extend({
         this.formDisplayed = this.CONTACT;
         this.$container = $(this.container);
         this.$taglineContainer = $(this.taglineContainer);
+        this.$formContent = $(this.formContent);
+        this.contactHTML = this.$formContent.html();
+        this.quoteHTML = $('#quote-form-content').removeAttr('style').html();
+        $('#quote-form-content').remove();
         // this.model will refer to Contact model.
         this.quoteModel = options.quoteModel;
     },
@@ -39,8 +44,7 @@ export var QuickSendView = Backbone.View.extend({
             .addClass('medium-6');
         this.$container.removeClass('medium-12').removeClass('large-6').removeClass('large-offset-2')
             .addClass('medium-6').addClass('large-4').addClass('large-offset-4');
-        $('#quote-form-content').hide();
-        $('#contact-form-content').show();
+        this.$formContent.html(this.contactHTML);
     }, 
 
     renderQuoteForm: function() {
@@ -49,8 +53,7 @@ export var QuickSendView = Backbone.View.extend({
             .addClass('hide-for-medium-only');
         this.$container.removeClass('medium-6').removeClass('large-4').removeClass('large-offset-4')
             .addClass('medium-12').addClass('large-6').addClass('large-offset-2');
-        $('#contact-form-content').hide();
-        $('#quote-form-content').show();
+        this.$formContent.html(this.quoteHTML);
     },
 
     getFormJSON: function() {

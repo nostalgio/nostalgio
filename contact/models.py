@@ -26,6 +26,16 @@ class QuickSend(models.Model):
             max_length=24, default="SOFTWARE", blank=True)
     name = models.CharField(max_length=255, blank=False)
     email = models.EmailField(blank=False)
+
+
+class QuickQuote(models.Model):
+    """
+    Model for quick quote form.
+    """
+    name = models.CharField(max_length=255, blank=False)
+    email = models.EmailField(blank=False)
+    phone = models.CharField(max_length=50, blank=False)
+    project = models.TextField(blank=False)
         
 
 
