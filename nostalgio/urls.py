@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
+from django.views.generic.base import TemplateView
 
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtailsearch import urls as wagtailsearch_urls
@@ -28,6 +29,8 @@ urlpatterns = [
     url(r'^api/', include('api.routers', namespace='api')),
     url(r'^api-auth/', include('rest_framework.urls',
             namespace='rest_framework')),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt',
+            content_type='text/plain')),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
