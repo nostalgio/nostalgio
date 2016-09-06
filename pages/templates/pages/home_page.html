@@ -28,7 +28,7 @@
 
     <div class="intro">
         <div class="row center-row" data-equalizer="intro" data-equalize-on="medium">
-            <div class="medium-6 large-4 columns">
+            <div id="tagline-container" class="medium-6 large-4 columns">
                 <div id="tagline" class="delay-2 vertical-center" data-equalizer-watch="intro">
                     <div class="tagtext delay-3 hide-for-small-only">
                         Timeless Design
@@ -46,26 +46,27 @@
                     </p>                
                 </div>
             </div>
-            <div class="medium-6 large-4 large-offset-4 columns">
+            <div id="quick-send-container" class="medium-6 large-4 large-offset-4 columns">
                 <!-- Place rolodex of cool statements here. -->
                 <div id="quick-contact-form" class="delay-1 loading-container vertical-center" data-equalizer-watch="intro">
                     <form id="quick-send-form" action="." class="form compact-form" method="post" accept-charset="utf-8">
-                        <div>
-                            <div class="row collapse">
-                                <div class="small-5 columns noflow">
-                                    Message
-                                </div>
-                                <div class="small-3 columns text-center">
-                                    <div class="switch">
-                                        <input class="switch-input" id="contact_switch" type="checkbox" name="contact_switch" value="">
-                                        <label class="switch-paddle" for="contact_switch"></label>
-                                    </div>
-                                </div>
-                                <div class="small-4 columns text-right">
-                                    Quote
+                        <div class="row collapse">
+                            <div class="small-5 columns noflow">
+                                Message
+                            </div>
+                            <div class="small-3 columns text-center">
+                                <div class="switch">
+                                    <input class="switch-input" id="contact_switch" type="checkbox" name="contact_switch" value="">
+                                    <label class="switch-paddle" for="contact_switch"></label>
                                 </div>
                             </div>
-                            <hr>
+                            <div class="small-4 columns text-right">
+                                Quote
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div id='contact-form-content'>
                             <span>I want to talk about </span>
                             <select name="reason" class="inline-select">
                                 <option value="SOFTWARE">software</option>
@@ -78,9 +79,45 @@
                             <br>
                             <input type="text" name="name" value="" placeholder="first and last name">
                             <input type="email" name="email" value="" placeholder="email address">
-
-                            <button type="submit" class="button expanded">SEND</button>
                         </div>
+                        <div id='quote-form-content' style="display: none;">
+                            <p>
+                                Tell us a bit about your project.
+                            </p>
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label for="" class="text-right">Name:</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="text" name="name" value="" placeholder="first and last name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label for="" class="text-right">Email:</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="email" name="email" value="" placeholder="email address">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label for="" class="text-right">Phone:</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="tel" name="phone" value="" placeholder="000-000-0000">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label for="" class="text-right">Project:</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <textarea name="description" placeholder="Briefly describe your project."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="button expanded">SEND</button>
                     </form>
                 </div>
             </div>
