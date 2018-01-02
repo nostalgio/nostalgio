@@ -5,36 +5,6 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-    <!-- Modals -->
-
-
-    <div class="reveal" id="quick-send-success" data-reveal>
-        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
-        <p class="lead text-center">We have received your inquiry and will respond to you soon.</p>
-        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-    <div class="reveal" id="quick-quote-success" data-reveal>
-        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
-        <p class="lead text-center">We have received your request and will respond to you soon.</p>
-        <p class="text-center">Our current rate for software development is $120/hr.</p>
-        <p class="text-center">Feel free to call us during normal business hours. (206) 930-2645</p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-    <div class="reveal" id="quick-send-error" data-reveal>
-        <h3 class="text-center">Oh no! Something Went Wrong.</h3>
-        <p class="lead text-center">Please try sending us an email directly <a href="mailto:joshua@nostalg.io">joshua@nostalg.io</a>.</p>
-        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
 
     <div class="intro">
         <div class="row center-row" data-equalizer="intro" data-equalize-on="medium">
@@ -287,6 +257,35 @@
                {% endfor %}
             </div>
         </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="reveal" id="quick-send-success" data-reveal>
+        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
+        <p class="lead text-center">We have received your inquiry and will respond to you soon.</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="quick-quote-success" data-reveal>
+        <h3 class="text-center">Awesome. We'll Be in Touch.</h3>
+        <p class="lead text-center">We have received your request and will respond to you soon.</p>
+        <p class="text-center">Our current rate for software development is $120/hr.</p>
+        <p class="text-center">Feel free to call us during normal business hours. (206) 930-2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="quick-send-error" data-reveal>
+        <h3 class="text-center">Oh no! Something Went Wrong.</h3>
+        <p class="lead text-center">Please try sending us an email directly <a href="mailto:joshua@nostalg.io">joshua@nostalg.io</a>.</p>
+        <p class="text-center">Also, feel free to call us during normal business hours. (206) 930-2645</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 
     <!-- Do this later.
