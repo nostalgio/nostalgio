@@ -58,7 +58,7 @@ sqlparse==0.2.0
 tornado==4.4.1
 Unidecode==0.4.19
 uritemplate==0.6
-urllib3==1.16
+urllib3==1.26.5
 wagalytics==0.6
 wagtail==1.5.3
 wagtailfontawesome==1.0.5
