@@ -60,7 +60,7 @@ Unidecode==0.4.19
 uritemplate==0.6
 urllib3==1.16
 wagalytics==0.6
-wagtail==1.5.3
+wagtail==2.11.8
 wagtailfontawesome==1.0.5
 whichcraft==0.4.0
 Willow==0.3.1
